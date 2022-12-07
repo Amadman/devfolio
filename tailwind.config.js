@@ -9,6 +9,19 @@ module.exports = {
       screens: {
         xs: '480px',
       },
+      colors: {
+        awesome: '#DC3522',
+        darkgray: '#333333',
+        awesomegray: '#5D5D5D',
+        darktext: '#414141',
+      },
+      fontSize: {
+        xl: ['20px', '28px'],
+      },
+    },
+    fontFamily: {
+      sans: ['Source Sans Pro', 'sans-serif'],
+      header: ['Roboto', 'sans-serif'],
     },
   },
   variants: {},

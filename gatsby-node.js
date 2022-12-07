@@ -69,21 +69,29 @@ exports.createSchemaCustomization = ({ actions }) => {
     type SiteSiteMetadata {
       siteUrl: String
       name: String
+      surname: String
       title: String
       description: String
       author: String
       github: String
       linkedin: String
       about: String
+      experience: [SectionExp]
       projects: [SectionItem]
-      experience: [SectionItem]
       skills: [SectionItem]
+    }
+
+    type SectionExp {
+      name: String!
+      description: [String!]!
+      description: [String!]!
+      link: String!
     }
 
     type SectionItem {
       name: String!
       description: String!
-      link: String!
+      link: String
     }
 
     type MarkdownRemark implements Node {

@@ -2,19 +2,19 @@ import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 
-import profileImg from '../../images/profile.jpg';
+import profileImg from '../../images/icon.png';
 
 const classes = {
   wrapper: 'block mb-6 md:flex',
   imageWrapper: 'w-full max-w-150',
   image: 'rounded-full transform transition-all duration-150 hover:scale-105',
   contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20',
-  name: 'text-5xl text-gray-900 font-bold leading-tight hover:text-black',
-  description: 'text-gray-600',
-  list: 'mt-6 uppercase tracking-wider',
+  name: 'font-header text-5xl text-gray-700 font-thin leading-tight',
+  surname: 'font-header text-5xl text-darkgray font-bold leading-tight',
+  description: 'text-xl text-awesome font-semibold',
+  list: 'mt-6 tracking-wider',
   item: 'inline list-none pr-4',
-  link:
-    'inline-block py-2 font-semibold text-xs text-gray-600 hover:text-black',
+  link: 'inline-block py-2 font-semibold text-darkgray hover:text-awesome',
 };
 
 const Header = ({ metadata = {}, noBlog = false }) => {
@@ -25,15 +25,19 @@ const Header = ({ metadata = {}, noBlog = false }) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.imageWrapper}>
-        <Link to="/">
+        {/* <Link to="/">
           <img className={classes.image} src={profileImg} alt={metadata.name} />
-        </Link>
+        </Link> */}
       </div>
       <div className={classes.contentWrapper}>
-        <h1 className={classes.name}>
-          <Link to="/">{metadata.name}</Link>
-        </h1>
-        <p className={classes.description}>{metadata.description}</p>
+        <span className={classes.name}>{metadata.name}</span>{' '}
+        <span className={classes.surname}>{metadata.surname}</span>
+        <p
+          className={classes.description}
+          style={{ fontVariantCaps: 'all-small-caps' }}
+        >
+          {metadata.description}
+        </p>
         <ul className={classes.list}>
           {twitter && (
             <li className={classes.item}>
